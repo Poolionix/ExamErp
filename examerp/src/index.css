@@ -1,0 +1,173 @@
+:root {
+  /* Light Theme Palette */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-input: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-color: #f1f5f9;
+  --border-input: #cbd5e1;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #eef2ff;
+
+  --high-priority-bg: #fff1f2;
+  --high-priority-border: #f43f5e;
+  --high-priority-text: #881337;
+
+  --success-bg: #ecfdf5;
+  --success-text: #059669;
+  --warning-bg: #fffbeb;
+  --warning-text: #d97706;
+
+  --dark-card: #0b132b;
+}
+
+/* Dark Theme Overrides */
+.dark {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-sidebar: #0f172a;
+  --bg-input: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-light: #94a3b8;
+  --border-color: #334155;
+  --border-input: #475569;
+
+  --primary-light: #312e81;
+
+  --high-priority-bg: #4c0519;
+  --high-priority-border: #f43f5e;
+  --high-priority-text: #fecdd3;
+
+  --success-bg: #064e3b;
+  --success-text: #a7f3d0;
+  --warning-bg: #451a03;
+  --warning-text: #fde68a;
+
+  --dark-card: #020617;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  height: 100vh;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--bg-main);
+}
+
+.content-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Common UI Elements */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-indigo {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.badge-warning {
+  background: var(--warning-bg);
+  color: var(--warning-text);
+}
+
+.badge-success {
+  background: var(--success-bg);
+  color: var(--success-text);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-outline {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-input);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 12px;
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-input);
+}
+
+.progress-track {
+  width: 100%;
+  background-color: var(--bg-input);
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}

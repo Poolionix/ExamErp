@@ -1,0 +1,137 @@
+.calendar-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.calendar-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.calendar-header p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.calendar-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.date-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-arrow {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: white;
+  cursor: pointer;
+}
+
+.date-range {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.calendar-legend {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-right: 0.375rem;
+}
+
+.dot-high { background-color: var(--high-priority-border); }
+.dot-normal { background-color: var(--primary); }
+
+/* 7 Columns Grid */
+.calendar-grid-7 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.75rem;
+}
+
+.day-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.5rem;
+  min-height: 400px;
+}
+
+.day-header {
+  text-align: center;
+  background-color: #f1f5f9;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.event-card {
+  padding: 0.625rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.event-high {
+  background-color: var(--high-priority-bg);
+  border-left: 3px solid var(--high-priority-border);
+}
+
+.event-normal {
+  background-color: var(--primary-light);
+  border-left: 3px solid var(--primary);
+}
+
+.event-time {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.event-card h5 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.event-course {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
