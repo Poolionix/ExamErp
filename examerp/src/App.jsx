@@ -7,6 +7,7 @@ import DiagnosticQuizView from './components/DiagnosticQuiz';
 import StudyCalendarView from './components/StudyCalendar';
 import Register from './components/Register';
 
+
 export default function App() {
   const [currentView, setCurrentView] = useState('dashboard');
   const [darkMode, setDarkMode] = useState(false);
