@@ -15,7 +15,7 @@ export default function Sidebar({ currentView, setCurrentView }) {
         <div className="sidebar-brand">
           <div className="brand-logo">E</div>
           <div className="brand-info">
-            <h2>ExamErp</h2>
+            <h2>EXAMERP</h2>
             <span>STUDENT WORKSPACE</span>
           </div>
         </div>
