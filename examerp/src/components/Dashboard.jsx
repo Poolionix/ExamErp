@@ -4,7 +4,7 @@ import './Dashboard.css';
 export default function Dashboard({ setCurrentView }) {
   return (
     <div className="dashboard-container">
-      {/* Title & Action */}
+  
       <div className="dashboard-header">
         <div>
           <div className="date-sub">Tuesday, May 14</div>
@@ -16,7 +16,7 @@ export default function Dashboard({ setCurrentView }) {
         </button>
       </div>
 
-      {/* Next Exam Banner */}
+    
       <div className="card banner-card">
         <div className="banner-left">
           <span className="clock-icon">🕒</span>
@@ -32,7 +32,7 @@ export default function Dashboard({ setCurrentView }) {
         </div>
       </div>
 
-      {/* Grid Summary */}
+  
       <div className="summary-grid">
         <div className="card readiness-card">
           <div className="readiness-header">
@@ -66,7 +66,7 @@ export default function Dashboard({ setCurrentView }) {
         </div>
       </div>
 
-      {/* Course Readiness */}
+  
       <div className="courses-section">
         <div className="section-header">
           <h3>Course readiness</h3>
