@@ -16,6 +16,7 @@ export default function Login({ isDarkMode, onToggleTheme, onLoginSuccess, onSwi
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.removeItem('loginEmail'); //dili ma save ang email basta mo logout kas account
     if (onLoginSuccess) {
       onLoginSuccess();
     }
