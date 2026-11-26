@@ -146,7 +146,7 @@ export default function Login({ isDarkMode, onToggleTheme, onLoginSuccess, onSwi
           </form>
 
           <p className="auth-security-note">
-            Protected by enterprise-grade encryption. Your academic data stays private.
+            Custom made for students, by students. Your data is safe and secure with us.
           </p>
         </div>
 
