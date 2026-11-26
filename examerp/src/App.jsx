@@ -30,6 +30,10 @@ export default function App() {
     { id: 6, date: '2026-05-21', time: '11:00 • 60 MIN', title: 'Weak topics review', course: 'CS301', priority: 'high' },
   ]);
 
+
+    useEffect(() => {
+    localStorage.setItem('currentView', currentView);
+  }, [currentView]);
   const handleAddMaterial = (newMaterial) => {
     setExams((prev) => [...prev, newMaterial]);
   };
