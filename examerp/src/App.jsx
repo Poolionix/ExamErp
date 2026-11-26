@@ -6,6 +6,7 @@ import MaterialsView from './components/Materialsview';
 import DiagnosticQuizView from './components/DiagnosticQuiz';
 import StudyCalendarView from './components/StudyCalendar';
 import Login from './components/Login';
+import Register from './components/Register';
 
 
 export default function App() {
@@ -74,6 +75,12 @@ return (
         isDarkMode={darkMode}
         onToggleTheme={() => setDarkMode((prev) => !prev)}
         onLoginSuccess={() => setCurrentView('dashboard')}
+        onSwitchToRegister={() => setCurrentView('register')}
+      />
+    ) :currentView === 'register' ?  (
+      <Register
+        onRegisterSuccess={() => setCurrentView('dashboard')}
+        onSwitchToLogin={() => setCurrentView('login')}
       />
     ) : (
       <div className={`app-container ${darkMode ? 'dark' : ''}`}>
