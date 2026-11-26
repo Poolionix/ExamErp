@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
@@ -9,7 +9,9 @@ import Login from './components/Login';
 
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('login');
+    const [currentView, setCurrentView] = useState(() => {
+    return localStorage.getItem('currentView') || 'login';
+  });
   const [darkMode, setDarkMode] = useState(false);
 
   const [exams, setExams] = useState([
