@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 
 export default function Login({ isDarkMode, onToggleTheme, onLoginSuccess, onSwitchToRegister }) {
-  const [email, setEmail] = useState('');
+    // State para sa email, password, ug showPassword
+    const [email, setEmail] = useState(() => {
+    return localStorage.getItem('loginEmail') || '';
+  });
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);//show passwrd
+
+    //save email sa localStorage kung mag change ang email
+    useEffect(() => {
+    localStorage.setItem('loginEmail', email);
+  }, [email]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
