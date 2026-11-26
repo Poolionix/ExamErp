@@ -5,11 +5,11 @@ import Dashboard from './components/Dashboard';
 import MaterialsView from './components/Materialsview';
 import DiagnosticQuizView from './components/DiagnosticQuiz';
 import StudyCalendarView from './components/StudyCalendar';
-import Register from './components/Register';
+import Login from './components/Login';
 
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('dashboard');
+  const [currentView, setCurrentView] = useState('login');
   const [darkMode, setDarkMode] = useState(false);
 
   const [exams, setExams] = useState([
@@ -46,41 +46,66 @@ export default function App() {
     setStudyTasks((prev) => prev.filter((t) => t.id !== id));
   };
 
-  return (
-    <div className={`app-container ${darkMode ? 'dark' : ''}`}>
-      <Sidebar currentView={currentView} setCurrentView={setCurrentView} />
-      <div className="main-wrapper">
-        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-        <main className="content-body">
-          {currentView === 'dashboard' && (
-            <Dashboard 
-              exams={exams} 
-              setCurrentView={setCurrentView} 
-            />
-          )}
-          {currentView === 'materials' && (
-            <MaterialsView 
-              exams={exams} 
-              onAddMaterial={handleAddMaterial} 
-              onUpdateConfidence={handleUpdateConfidence} 
-            />
-          )}
-          {currentView === 'quiz' && (
-            <DiagnosticQuizView 
-              exams={exams} 
-              onCompleteQuiz={(updatedExams) => setExams(updatedExams)}
-              setCurrentView={setCurrentView}
-            />
-          )}
-          {currentView === 'calendar' && (
-            <StudyCalendarView 
-              studyTasks={studyTasks} 
-              onAddTask={handleAddTask} 
-              onDeleteTask={handleDeleteTask} 
-            />
-          )}
-        </main>
+  
+return (
+  <>
+    {currentView === 'login' ? (
+      <Login
+        isDarkMode={darkMode}
+        onToggleTheme={() => setDarkMode((prev) => !prev)}
+        onLoginSuccess={() => setCurrentView('dashboard')}
+      />
+    ) : (
+      <div className={`app-container ${darkMode ? 'dark' : ''}`}>
+        <Sidebar
+          currentView={currentView}
+          setCurrentView={setCurrentView}
+        />
+
+        <div className="main-wrapper">
+          <Header
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+          />
+
+          <main className="content-body">
+            {currentView === 'dashboard' && (
+              <Dashboard
+                exams={exams}
+                setCurrentView={setCurrentView}
+              />
+            )}
+
+            {currentView === 'materials' && (
+              <MaterialsView
+                exams={exams}
+                onAddMaterial={handleAddMaterial}
+                onUpdateConfidence={handleUpdateConfidence}
+              />
+            )}
+
+            {currentView === 'quiz' && (
+              <DiagnosticQuizView
+                exams={exams}
+                onCompleteQuiz={(updatedExams) =>
+                  setExams(updatedExams)
+                }
+                setCurrentView={setCurrentView}
+              />
+            )}
+
+            {currentView === 'calendar' && (
+              <StudyCalendarView
+                studyTasks={studyTasks}
+                onAddTask={handleAddTask}
+                onDeleteTask={handleDeleteTask}
+              />
+            )}
+          </main>
+        </div>
       </div>
-    </div>
-  );
+    )}
+  </>
+);
+
 }
