@@ -12,7 +12,10 @@ export default function App() {
     const [currentView, setCurrentView] = useState(() => {
     return localStorage.getItem('currentView') || 'login';
   });
-  const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    return saved ? JSON.parse(saved) : false;
+  });
 
   const [exams, setExams] = useState([
     { id: 1, code: 'CS301', name: 'Data Structures', date: '2026-05-24', confidence: 42, status: 'In progress', material: 'PDF • 24 pages' },
@@ -30,10 +33,21 @@ export default function App() {
     { id: 6, date: '2026-05-21', time: '11:00 • 60 MIN', title: 'Weak topics review', course: 'CS301', priority: 'high' },
   ]);
 
-    //save the current view so refresh wont resrt to the log in page
+    //save the current view so ig refresh dili ma resrt to the log in page
     useEffect(() => {
     localStorage.setItem('currentView', currentView);
   }, [currentView]);
+
+    //save the dark mode para refresh dima baack to light mode
+    useEffect(() => {
+    localStorage.setItem('currentView', currentView);
+  }, [currentView]);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+
   const handleAddMaterial = (newMaterial) => {
     setExams((prev) => [...prev, newMaterial]);
   };
