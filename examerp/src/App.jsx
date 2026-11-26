@@ -39,10 +39,6 @@ export default function App() {
   }, [currentView]);
 
     //save the dark mode para refresh dima baack to light mode
-    useEffect(() => {
-    localStorage.setItem('currentView', currentView);
-  }, [currentView]);
-
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
   }, [darkMode]);
