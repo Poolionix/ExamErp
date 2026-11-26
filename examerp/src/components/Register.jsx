@@ -136,8 +136,8 @@ export default function Register({ onRegisterSuccess, onSwitchToLogin }) {
             </button>
           </form>
 
-          <p className="auth-security-note">
-            Protected by enterprise-grade encryption. Your academic data stays private.
+          <p className="for students-note">
+            Custom made for students, by students. Your data is safe and secure with us.
           </p>
         </div>
       </div>

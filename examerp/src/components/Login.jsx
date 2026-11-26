@@ -145,7 +145,7 @@ export default function Login({ isDarkMode, onToggleTheme, onLoginSuccess, onSwi
             </button>
           </form>
 
-          <p className="auth-security-note">
+          <p className="for students-note">
             Custom made for students, by students. Your data is safe and secure with us.
           </p>
         </div>
