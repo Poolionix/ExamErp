@@ -4,7 +4,7 @@ import './Login.css';
 export default function Login({ isDarkMode, onToggleTheme, onLoginSuccess, onSwitchToRegister }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);//show passwrd
 
   const handleSubmit = (e) => {
     e.preventDefault();
