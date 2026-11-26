@@ -30,7 +30,7 @@ export default function App() {
     { id: 6, date: '2026-05-21', time: '11:00 • 60 MIN', title: 'Weak topics review', course: 'CS301', priority: 'high' },
   ]);
 
-
+    //save the current view so refresh wont resrt to the log in page
     useEffect(() => {
     localStorage.setItem('currentView', currentView);
   }, [currentView]);
@@ -50,6 +50,10 @@ export default function App() {
 
   const handleDeleteTask = (id) => {
     setStudyTasks((prev) => prev.filter((t) => t.id !== id));
+  };
+
+    const handleSignOut = () => {
+    setCurrentView('login');
   };
 
   
@@ -72,6 +76,7 @@ return (
           <Header
             darkMode={darkMode}
             setDarkMode={setDarkMode}
+            onSignOut={handleSignOut}
           />
 
           <main className="content-body">
