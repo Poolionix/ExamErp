@@ -4,6 +4,7 @@ import './Login.css';
 export default function Login({ isDarkMode, onToggleTheme, onLoginSuccess, onSwitchToRegister }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -128,13 +129,16 @@ export default function Login({ isDarkMode, onToggleTheme, onLoginSuccess, onSwi
               </div>
               <div className="password-input-wrapper">
                 <input 
-                  type="password" 
+                  type={showPassword ? 'text' : 'password'} 
                   placeholder="At least 8 characters" 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-                <button type="button" className="eye-btn" title="Toggle password visibility">
+                <button type="button" 
+                className="eye-btn" 
+                onClick={() => setShowPassword(!showPassword)}
+                title="Toggle password visibility">
                   👁
                 </button>
               </div>
